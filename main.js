@@ -170,13 +170,14 @@
   if (!isMobile) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      // Background orbs: 0.3x speed
+      // Background orbs: use marginTop to preserve CSS animation transform
       orbs.forEach((orb, i) => {
         const speed = 0.3 + i * 0.05;
-        orb.style.transform = `translateY(${scrollY * speed}px)`;
+        orb.style.marginTop = `${scrollY * speed}px`;
       });
-      // Glass cards: subtle 0.03x parallax for depth
+      // Glass cards: subtle parallax, skip [data-tilt] to avoid overwriting tilt transform
       glassCards.forEach(card => {
+        if (card.hasAttribute('data-tilt')) return;
         const rect = card.getBoundingClientRect();
         const offset = (rect.top - window.innerHeight / 2) * 0.03;
         card.style.transform = `translateY(${offset}px)`;

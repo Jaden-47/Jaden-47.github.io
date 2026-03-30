@@ -63,6 +63,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
+  will-change: transform, margin-top;
 }
 .orb-violet {
   width: 500px; height: 500px;
@@ -112,6 +113,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-high);
+  will-change: transform;
 }
 .glass-secondary {
   background: var(--glass-mid);
@@ -120,6 +122,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: var(--shadow-mid);
+  will-change: transform;
 }
 .glass-tertiary {
   background: var(--glass-low);
@@ -134,7 +137,7 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   top: 16px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-10px);
   width: calc(100% - 48px);
   max-width: 900px;
   display: flex;
@@ -148,7 +151,8 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
   z-index: 1000;
-  transition: box-shadow 0.3s;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s;
 }
 .nav-brand {
   font-size: 14px;
@@ -565,6 +569,9 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.2;
 }
 .contact-word { display: inline-block; }
+.contact-word:nth-child(1) { transition-delay: 0s; }
+.contact-word:nth-child(2) { transition-delay: 0.15s; }
+.contact-word:nth-child(3) { transition-delay: 0.3s; }
 .contact-gradient {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
@@ -659,6 +666,11 @@ a { color: inherit; text-decoration: none; }
   .orb-violet { width: 300px; height: 300px; }
   .orb-coral { width: 280px; height: 280px; }
   .orb-sky { width: 250px; height: 250px; }
+
+  /* Reduce glass blur for mobile performance */
+  .glass-primary  { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .glass-secondary { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .glass-tertiary  { backdrop-filter: blur(8px);  -webkit-backdrop-filter: blur(8px);  }
 }
 
 @media (max-width: 480px) {
@@ -694,12 +706,7 @@ a { color: inherit; text-decoration: none; }
 .hero-loaded .hero-stats .stat-card:nth-child(2) { transition-delay: 0.7s; }
 .hero-loaded .hero-stats .stat-card:nth-child(3) { transition-delay: 0.8s; }
 
-/* Also animate nav */
-.nav-glass {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s;
-}
+/* Nav loaded state */
 .nav-loaded {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
