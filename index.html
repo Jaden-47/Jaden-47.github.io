@@ -163,7 +163,7 @@
             </div>
             <span class="proj-badge">FEATURED</span>
           </div>
-          <p class="proj-desc" data-i18n="proj.rustui.desc">用 Rust 重写 Flutter 渲染层，通过 mmap 共享内存实现零拷贝渲染管线。内存降低 40%+，冷启动提升 ~20%，首帧提升 70%+，每帧 CPU 渲染开销降低 ~30%。</p>
+          <p class="proj-desc" data-i18n="proj.rustui.desc">基于 Rust + unsafe FFI 自研系统级渲染框架，替代 Flutter UI 方案并集成至 HyperOS。通过 mmap 共享内存实现跨进程零拷贝渲染管线，将 Rust 异步运行时深度接入 Flutter Engine 的事件循环与线程模型。线上内存降低 40%+，冷启动缩短 ~20%，首帧提升 70%+，每帧 CPU 开销降低 ~30%。</p>
           <div class="proj-metrics">
             <div class="metric-pill glass-tertiary">
               <span class="metric-value" data-count="40">0</span><span class="metric-unit">%+</span>
@@ -183,11 +183,22 @@
         <!-- DDS -->
         <div class="proj-card glass-secondary animate-in">
           <div class="proj-meta mono" data-i18n="proj.dds.meta">ALIBABA · 2022-2025</div>
-          <h3 class="proj-title" data-i18n="proj.dds.title">AliOS DDS 中间件</h3>
-          <p class="proj-desc" data-i18n="proj.dds.desc">高性能车载通信中间件，运用 Zero-Copy、共享内存与 AF_XDP 用户态网络栈，实现 ~50μs 端到端延迟。</p>
+          <h3 class="proj-title" data-i18n="proj.dds.title">AliOS DDS 通信中间件</h3>
+          <p class="proj-desc" data-i18n="proj.dds.desc">车载实时通信中间件核心开发。基于 POSIX shm/mmap 实现共享内存零拷贝通道，通过 AF_XDP + eBPF 构建用户态网络栈绕过内核协议栈。Discovery 模块优化：大规模场景从 3-5s 降至 300ms。</p>
           <div class="proj-highlight">
             <span class="metric-value-prefix">~</span><span class="metric-value" data-count="50">0</span><span class="metric-unit">μs</span>
             <span class="metric-label" data-i18n="proj.dds.m1">延迟</span>
+          </div>
+        </div>
+
+        <!-- DDS HA -->
+        <div class="proj-card glass-secondary animate-in">
+          <div class="proj-meta mono" data-i18n="proj.ha.meta">ALIBABA · 2023</div>
+          <h3 class="proj-title" data-i18n="proj.ha.title">DDS 域冗余高可用架构</h3>
+          <p class="proj-desc" data-i18n="proj.ha.desc">设计 DDS 域冗余架构与主备节点无缝切换机制，系统可用性从 99.9% 提升至 99.99%。支撑车载系统在关键链路故障时的实时容错与自动恢复。</p>
+          <div class="proj-highlight">
+            <span class="metric-value">99.99</span><span class="metric-unit">%</span>
+            <span class="metric-label" data-i18n="proj.ha.m1">可用性</span>
           </div>
         </div>
 
@@ -195,11 +206,29 @@
         <div class="proj-card glass-secondary animate-in">
           <div class="proj-meta mono" data-i18n="proj.agent.meta">XIAOMI · 2025</div>
           <h3 class="proj-title" data-i18n="proj.agent.title">Agent 代码迁移</h3>
-          <p class="proj-desc" data-i18n="proj.agent.desc">搭建 agentic coding workflow，沉淀可复用的人机协同开发范式，2天完成10人月迁移工作量，在百人团队中推广落地。</p>
+          <p class="proj-desc" data-i18n="proj.agent.desc">搭建 agentic coding workflow，沉淀可复用的人机协同开发范式，两天完成十人月的迁移工作量，在百人团队中推广落地。</p>
           <div class="proj-highlight">
             <span class="metric-value" data-count="10">0</span><span class="metric-unit">x</span>
             <span class="metric-label" data-i18n="proj.agent.m1">效率提升</span>
           </div>
+        </div>
+
+        <!-- CI/CD Platform -->
+        <div class="proj-card glass-tertiary animate-in">
+          <div class="proj-meta mono" data-i18n="proj.cicd.meta">ALIBABA · 2023-2024</div>
+          <h3 class="proj-title" data-i18n="proj.cicd.title">自动化测试与监控平台</h3>
+          <p class="proj-desc" data-i18n="proj.cicd.desc">设计并搭建 Jenkins CI/CD 平台，集成 Grafana 监控看板，实现一键出包、自动化测试与性能回归。发现并修复 300+ 潜在问题（死锁、内存泄漏、竞态条件）。</p>
+          <div class="proj-highlight">
+            <span class="metric-value" data-count="300">0</span><span class="metric-unit">+</span>
+            <span class="metric-label" data-i18n="proj.cicd.m1">问题修复</span>
+          </div>
+        </div>
+
+        <!-- DDS Config Tool -->
+        <div class="proj-card glass-tertiary animate-in">
+          <div class="proj-meta mono" data-i18n="proj.tool.meta">ALIBABA · 2024</div>
+          <h3 class="proj-title" data-i18n="proj.tool.title">DDS 配置工具</h3>
+          <p class="proj-desc" data-i18n="proj.tool.desc">基于 Vue + Electron 开发可视化 DDS 配置工具，简化 QoS 策略与网络参数配置流程，提升项目交付效率与商业竞争力。</p>
         </div>
       </div>
     </section>
