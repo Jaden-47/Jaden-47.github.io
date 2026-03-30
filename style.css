@@ -402,15 +402,30 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 24px;
 }
 
-/* Node row: dot + year sit on the center line */
+/* Node row: dot on center line, year label on opposite side of card */
 .timeline-node {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   position: relative;
   z-index: 2;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  /* Default: centered */
+  justify-content: center;
+}
+
+/* Left card → date label sits in right half (after dot) */
+.tl-left .timeline-node {
+  justify-content: center;
+  /* Nudge dot+label toward right half so label clears left card */
+  padding-left: calc(50% - 6px);
+}
+
+/* Right card → date label sits in left half (before dot), reverse order */
+.tl-right .timeline-node {
+  flex-direction: row-reverse;
+  padding-right: calc(50% - 6px);
+  justify-content: center;
 }
 
 .timeline-dot {
