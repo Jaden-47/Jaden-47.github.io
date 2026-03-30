@@ -7,7 +7,6 @@
   "hero.name": "柳振跃",
   "hero.tagline": "构建驱动百万设备的基础架构。从微秒级通信中间件到 Agent 驱动的开发范式。",
   "hero.cta1": "查看项目",
-  "hero.cta2": "下载简历",
   "hero.stat1.label": "内存优化",
   "hero.stat2.label": "端到端延迟",
   "hero.stat3.label": "Agent 效率",
@@ -45,6 +44,5 @@
   "contact.h3": "Together.",
   "contact.subtitle": "期待与你共同创造",
   "contact.wechat": "微信: 193-3400-8868",
-  "contact.resume": "下载简历 PDF",
   "footer.text": "© 2025 Liu Zhenyue — Designed with intention"
 }

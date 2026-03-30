@@ -7,7 +7,6 @@
   "hero.name": "Zhenyue Liu",
   "hero.tagline": "Building infrastructure that powers millions of devices. From microsecond middleware to Agent-driven development.",
   "hero.cta1": "View Projects",
-  "hero.cta2": "Download Resume",
   "hero.stat1.label": "MEMORY OPT",
   "hero.stat2.label": "E2E LATENCY",
   "hero.stat3.label": "AGENT SPEED",
@@ -45,6 +44,5 @@
   "contact.h3": "Together.",
   "contact.subtitle": "Let's create something amazing together",
   "contact.wechat": "WeChat: 193-3400-8868",
-  "contact.resume": "Download Resume PDF",
   "footer.text": "© 2025 Liu Zhenyue — Designed with intention"
 }

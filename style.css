@@ -611,11 +611,6 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-1px);
 }
 .contact-icon { font-size: 14px; }
-.contact-resume {
-  display: inline-block;
-  margin-top: 24px;
-  font-size: 13px;
-}
 
 /* ===== Footer ===== */
 .footer {
