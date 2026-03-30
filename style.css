@@ -402,30 +402,24 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 24px;
 }
 
-/* Node row: dot on center line, year label on opposite side of card */
+/* Node row: dot on center line, year label same side as card */
 .timeline-node {
   display: flex;
   align-items: center;
   gap: 10px;
   position: relative;
   z-index: 2;
-  margin-bottom: 14px;
-  /* Default: centered */
-  justify-content: center;
 }
 
-/* Left card → date label sits in right half (after dot) */
+/* Left card → dot + label align left */
 .tl-left .timeline-node {
-  justify-content: center;
-  /* Nudge dot+label toward right half so label clears left card */
-  padding-left: calc(50% - 6px);
+  justify-content: flex-start;
 }
 
-/* Right card → date label sits in left half (before dot), reverse order */
+/* Right card → dot + label align right, label before dot */
 .tl-right .timeline-node {
+  justify-content: flex-end;
   flex-direction: row-reverse;
-  padding-right: calc(50% - 6px);
-  justify-content: center;
 }
 
 .timeline-dot {
@@ -465,6 +459,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
   width: calc(50% - 32px);
+  margin-top: 16px;
 }
 .exp-card:hover {
   transform: translateY(-3px);
