@@ -377,7 +377,7 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 40px;
 }
 
-/* Centered timeline */
+/* ===== Centered Timeline ===== */
 .timeline {
   position: relative;
   max-width: 900px;
@@ -396,40 +396,21 @@ a { color: inherit; text-decoration: none; }
   transform: translateX(-50%);
 }
 
+/* Each item: dot row + card row, stacked vertically */
 .timeline-item {
-  display: flex;
-  align-items: flex-start;
   position: relative;
-  width: 50%;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 }
 
-/* Left items: card on the left side */
-.tl-left {
-  left: 0;
-  padding-right: 40px;
-  flex-direction: row-reverse;
-}
-
-/* Right items: card on the right side */
-.tl-right {
-  left: 50%;
-  padding-left: 40px;
-}
-
-/* Node (dot + year label) positioned at the center line */
+/* Node row: dot + year sit on the center line */
 .timeline-node {
-  position: absolute;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
   z-index: 2;
-}
-.tl-left .timeline-node {
-  right: -6px;
-}
-.tl-right .timeline-node {
-  left: -6px;
+  margin-bottom: 12px;
 }
 
 .timeline-dot {
@@ -457,23 +438,34 @@ a { color: inherit; text-decoration: none; }
 }
 
 .timeline-year {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-secondary);
   letter-spacing: 0.5px;
   white-space: nowrap;
-  margin-top: 6px;
 }
 
-/* Cards */
+/* Card hangs below node, offset to left or right */
 .exp-card {
   padding: 24px;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
-  flex: 1;
+  width: calc(50% - 32px);
 }
 .exp-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Left card: sits on the left half */
+.tl-left .exp-card {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Right card: sits on the right half */
+.tl-right .exp-card {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .exp-company {
@@ -698,23 +690,19 @@ a { color: inherit; text-decoration: none; }
 
   /* Timeline: single column on mobile */
   .timeline::before {
-    left: 12px;
-  }
-  .timeline-item,
-  .tl-left,
-  .tl-right {
-    left: 0;
-    width: 100%;
-    padding-left: 36px;
-    padding-right: 0;
-    flex-direction: row;
-  }
-  .tl-left .timeline-node,
-  .tl-right .timeline-node {
     left: 6px;
-    right: auto;
   }
-  .exp-card { padding: 18px 16px; }
+  .timeline-node {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .exp-card,
+  .tl-left .exp-card,
+  .tl-right .exp-card {
+    width: 100%;
+    margin-left: 0;
+    padding: 18px 16px;
+  }
 
   .proj-grid { grid-template-columns: 1fr; }
   .proj-featured { grid-column: 1; }
