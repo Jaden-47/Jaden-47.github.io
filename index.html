@@ -79,63 +79,74 @@
     <!-- Section 02: Experience -->
     <section id="experience" class="section">
       <div class="section-label" data-i18n="exp.label">02 — 工作经历</div>
-      <div class="exp-stack">
+      <div class="timeline">
         <!-- Xiaomi -->
-        <div class="exp-card glass-primary animate-in">
-          <div class="exp-active-dot"></div>
-          <div class="exp-header">
-            <div class="exp-info">
-              <div class="exp-company" data-i18n="exp.xiaomi.name">小米科技</div>
-              <div class="exp-role" data-i18n="exp.xiaomi.role">客户端基础架构工程师 · 南京</div>
-            </div>
-            <div class="exp-dates mono" data-i18n="exp.xiaomi.dates">2025.04 — 至今</div>
+        <div class="timeline-item animate-in">
+          <div class="timeline-date mono" data-i18n="exp.xiaomi.dates">2025.04 — 至今</div>
+          <div class="timeline-node">
+            <div class="timeline-dot active"></div>
           </div>
-          <p class="exp-desc" data-i18n="exp.xiaomi.desc">主导 RustUI 渲染引擎开发，替换 Flutter UI 层。内存降低 40%+，冷启动提升 ~20%，首帧提升 70%+。推动 Agent 驱动的代码迁移工作流，2天完成10人月工作量，在百人团队中推广落地。</p>
-          <div class="exp-tags">
-            <span class="tag">Rust</span>
-            <span class="tag">Flutter</span>
-            <span class="tag">C++</span>
-            <span class="tag">Agent</span>
+          <div class="exp-card glass-primary">
+            <div class="exp-header">
+              <div class="exp-info">
+                <div class="exp-company" data-i18n="exp.xiaomi.name">小米科技</div>
+                <div class="exp-role" data-i18n="exp.xiaomi.role">客户端基础架构工程师 · 南京</div>
+              </div>
+            </div>
+            <p class="exp-desc" data-i18n="exp.xiaomi.desc">主导 RustUI 渲染引擎开发，替换 Flutter UI 层。内存降低 40%+，冷启动提升 ~20%，首帧提升 70%+。推动 Agent 驱动的代码迁移工作流，2天完成10人月工作量，在百人团队中推广落地。</p>
+            <div class="exp-tags">
+              <span class="tag">Rust</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">C++</span>
+              <span class="tag">Agent</span>
+            </div>
           </div>
         </div>
 
         <!-- Alibaba -->
-        <div class="exp-card glass-secondary animate-in">
-          <div class="exp-header">
-            <div class="exp-info">
-              <div class="exp-company" data-i18n="exp.alibaba.name">阿里巴巴 · 斑马智行</div>
-              <div class="exp-role" data-i18n="exp.alibaba.role">中间件开发工程师 · 杭州</div>
-            </div>
-            <div class="exp-dates mono" data-i18n="exp.alibaba.dates">2022.11 — 2025.01</div>
+        <div class="timeline-item animate-in">
+          <div class="timeline-date mono" data-i18n="exp.alibaba.dates">2022.11 — 2025.01</div>
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
           </div>
-          <p class="exp-desc" data-i18n="exp.alibaba.desc">负责 AliOS DDS 通信中间件核心开发。实现 ~50μs 端到端延迟，运用 Zero-Copy、共享内存与 AF_XDP 用户态网络栈。主导 Discovery 模块优化，大规模场景从 3-5s 降至 300ms。修复 300+ issues。</p>
-          <div class="exp-tags">
-            <span class="tag">Rust</span>
-            <span class="tag">C++</span>
-            <span class="tag">tokio</span>
-            <span class="tag">AF_XDP</span>
+          <div class="exp-card glass-secondary">
+            <div class="exp-header">
+              <div class="exp-info">
+                <div class="exp-company" data-i18n="exp.alibaba.name">阿里巴巴 · 斑马智行</div>
+                <div class="exp-role" data-i18n="exp.alibaba.role">中间件开发工程师 · 杭州</div>
+              </div>
+            </div>
+            <p class="exp-desc" data-i18n="exp.alibaba.desc">负责 AliOS DDS 通信中间件核心开发。实现 ~50μs 端到端延迟，运用 Zero-Copy、共享内存与 AF_XDP 用户态网络栈。主导 Discovery 模块优化，大规模场景从 3-5s 降至 300ms。修复 300+ issues。</p>
+            <div class="exp-tags">
+              <span class="tag">Rust</span>
+              <span class="tag">C++</span>
+              <span class="tag">tokio</span>
+              <span class="tag">AF_XDP</span>
+            </div>
           </div>
         </div>
 
         <!-- Dahua (compact) -->
-        <div class="exp-card glass-tertiary exp-compact animate-in">
-          <div class="exp-header">
-            <div class="exp-info">
-              <span class="exp-company" data-i18n="exp.dahua.name">浙江大华技术</span>
-              <span class="exp-role-inline" data-i18n="exp.dahua.role">桌面应用开发 · 实习</span>
-            </div>
-            <div class="exp-dates mono">2021</div>
+        <div class="timeline-item animate-in">
+          <div class="timeline-date mono">2021</div>
+          <div class="timeline-node">
+            <div class="timeline-dot small"></div>
+          </div>
+          <div class="exp-card glass-tertiary exp-compact">
+            <span class="exp-company" data-i18n="exp.dahua.name">浙江大华技术</span>
+            <span class="exp-role-inline" data-i18n="exp.dahua.role">桌面应用开发 · 实习</span>
           </div>
         </div>
 
         <!-- UCSC (compact) -->
-        <div class="exp-card glass-tertiary exp-compact animate-in">
-          <div class="exp-header">
-            <div class="exp-info">
-              <span class="exp-company" data-i18n="exp.ucsc.name">UC Santa Cruz</span>
-              <span class="exp-role-inline" data-i18n="exp.ucsc.role">B.S. Computer Science · 3年修完4年课程</span>
-            </div>
-            <div class="exp-dates mono">2019 — 2022</div>
+        <div class="timeline-item animate-in">
+          <div class="timeline-date mono">2019 — 2022</div>
+          <div class="timeline-node">
+            <div class="timeline-dot small"></div>
+          </div>
+          <div class="exp-card glass-tertiary exp-compact">
+            <span class="exp-company" data-i18n="exp.ucsc.name">UC Santa Cruz</span>
+            <span class="exp-role-inline" data-i18n="exp.ucsc.role">B.S. Computer Science · 3年修完4年课程</span>
           </div>
         </div>
       </div>
